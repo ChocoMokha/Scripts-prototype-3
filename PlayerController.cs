@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false;
     private Animator playerAnim; 
     public ParticleSystem dirtParticle;
+    public ParticleSystem explosionParticle;
     private AudioSource playerAudio;
     public AudioClip jumpSound;
     public AudioClip crashSound;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetInteger("DeathType_int", 1);
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
+            explosionParticle.Play();
         }
         
     }
